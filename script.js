@@ -123,3 +123,8 @@ document.getElementById('tool-clear').addEventListener('click', () => {
         drawGrid();
     }
 });
+document.getElementById('cartridgeSlot').addEventListener('click', () => {
+    alert("⚡ GAME OVER?! Нет, это просто пасхалка! Цвета инвертированы! ⚡");
+    gridData = gridData.map(row => row.map(color => color === '#1a1530' ? '#ff007f' : '#1a1530'));
+    drawGrid();
+});
