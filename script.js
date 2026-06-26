@@ -128,3 +128,25 @@ document.getElementById('cartridgeSlot').addEventListener('click', () => {
     gridData = gridData.map(row => row.map(color => color === '#1a1530' ? '#ff007f' : '#1a1530'));
     drawGrid();
 });
+document.getElementById('downloadBtn').addEventListener('click', () => {
+    const exportCanvas = document.createElement('canvas');
+    const exportSize = 512;
+    exportCanvas.width = exportSize;
+    exportCanvas.height = exportSize;
+    
+    const exportCtx = exportCanvas.getContext('2d');
+    const exportPixelSize = exportSize / GRID_SIZE;
+    for (let r = 0; r < GRID_SIZE; r++) {
+        for (let c = 0; c < GRID_SIZE; c++) {
+            if (gridData[r][c] !== '#1a1530') {
+                exportCtx.fillStyle = gridData[r][c];
+                exportCtx.fillRect(c * exportPixelSize, r * exportPixelSize, exportPixelSize, exportPixelSize);
+            }
+        }
+    }
+    const link = document.createElement('a');
+    link.download = 'retro-sprite.png';
+    link.href = exportCanvas.toDataURL('image/png');
+    link.click();
+});
+drawGrid();
