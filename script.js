@@ -122,7 +122,7 @@ document.getElementById('cartridgeSlot').addEventListener('click', () => {
     gridData = gridData.map(row => row.map(color => color === '#1a1530' ? '#ff007f' : '#1a1530'));
     drawGrid();
 });
-document.getElementById('downloadBtn').addEventListener('click', () => {
+ document.getElementById('downloadBtn').addEventListener('click', () => {
     const exportCanvas = document.createElement('canvas');
     const exportSize = 512;
     exportCanvas.width = exportSize;
