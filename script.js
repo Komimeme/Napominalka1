@@ -118,7 +118,7 @@ document.getElementById('tool-pencil').addEventListener('click', () => switchToo
 document.getElementById('tool-eraser').addEventListener('click', () => switchTool('eraser'));
 document.getElementById('tool-bucket').addEventListener('click', () => switchTool('bucket'));
 document.getElementById('tool-clear').addEventListener('click', () => {
-    if(confirm("Очистить весь рисунок?")) {
+    if(confirm("Очистить весь рисунок")) {
         gridData = Array(GRID_SIZE).fill().map(() => Array(GRID_SIZE).fill('#1a1530'));
         drawGrid();
     }
