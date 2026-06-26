@@ -26,4 +26,22 @@ function drawGrid() {
         ctx.stroke();
     }
 }
+const nesPalette = [
+    '#000000',
+    '#FFFFFF',
+    '#ff0000', 
+    '#0018B8', 
+    '#00A800', 
+    '#F8B800', 
+    '#58bdf8', 
+    '#f800d3', 
+    '#BCBCBC' 
+];
 
+let currentColor = nesPalette[2];
+const paletteContainer = document.getElementById('palette');
+nesPalette.forEach((color, index) => {
+    const swatch = document.createElement('div');
+    swatch.classList.add('color-swatch');
+    swatch.style.backgroundColor = color;
+    if (color === currentColor) swatch.classList.add('selected');
